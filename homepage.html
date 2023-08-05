@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<style>
+  
+.headersection{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.postsection{
+    align-items: center;
+    margin: 10px;
+  
+}
+.footersection{
+    height: 40px;   
+}
+.footersection p{
+    
+padding-top: 5px;
+}
+.form-section{
+    overflow: scroll;
+}
+</style>
+
+</head>
+  <body class="bg-light">
+   
+
+    <section class="headersection">
+        <div class="container-fluid">
+            <div class="row">
+    <nav class="navbar navbar-expand-lg bg-primary sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Sample Blogger</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Create Post</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+</div>
+    </section>
+
+
+<section class="postsection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Submit form after calling e.preventDefault()</h5>
+                      <p class="card-text">For some reason I thought I needed to call e.preventDefault() before anything else or risk some kind of race condition. Thanks for the enlightenment. – 
+                        Wesley Murch
+                         Mar 12, 2014 at 21:24
+                        2
+                        No, the whole function will complete before the default action continues (or doesn't continue if you've cancelled it). If you knew you never wanted the default action for a particular event it would make sense to put that as the first line where it's obvious (e.g., if you wanted to submit the data via Ajax rather than with a form submit, or in a click handler on a link that triggers JS instead of doing standard navigation). Otherwise, putting it in conditional logic is fine. – 
+                        nnnnnn
+                         Mar 12, 2014 at 21:27 
+                        3
+                        @JamesNZ - I'm positive it's safe. In a heavily Ajax based site race conditions may be a problem if there are multiple Ajax requests made before the responses come back, because there's no guarantee that the responses will come back in any particular order - but even then you still don't need e.preventDefault() as the first line because the current block of synchronous code will complete before any Ajax callbacks are triggered. That is, JS will not interrupt the currently running function to call an Ajax callback - or a second event handler or timeout callback or whatever. – 
+                        nnnnnn
+                         Jul 31, 2014 at 14:00 </p>
+                      <a href="#" class="btn btn-primary">View Full Post</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-2">
+    <div class="card">
+        <div class="card-header text-center">
+          Create Post
+        </div>
+        <div class="card-body">
+         
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+      </div>
+    </div>
+    </div>
+</section>
+<section class="footersection  bg-primary ">
+   <footer>
+    <div class="container-fluid text-center">
+        <p ><small>&copy;  Developed by Loganathan RM.</small></p>
+        </div>
+    
+   </footer>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
